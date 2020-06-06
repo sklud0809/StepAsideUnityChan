@@ -13,11 +13,11 @@ public class ItemGenerator : MonoBehaviour {
     private float PosRange = 3.4f;//アイテムを出すx方向の範囲
     
     private float RastGenerator; //最後に生成されたオブジェクトの位置
-    private bool Cheakin;　//アイテム生成のオンオフ切り替え
+    private bool check_in;　//アイテム生成のオンオフ切り替え
 
     void Start()
     {
-        Cheakin = true;
+        check_in = true;
 
     }
 
@@ -31,13 +31,13 @@ public class ItemGenerator : MonoBehaviour {
         }
         else if(unityChan.transform.position.z <= StartPos)//スタート地点からアイテム生成開始
         {  
-           if(Cheakin == true)
+           if(check_in == true)
             {
                 Generator();
                // Debug.Log("チェックポイント通過1 アイテム生成");
-                Cheakin = false;
+                check_in = false;
             }
-           else if(Cheakin == false)
+           else if(check_in == false)
             {
                // Debug.Log("アイテム生成 終了");
             }
@@ -45,17 +45,17 @@ public class ItemGenerator : MonoBehaviour {
         else if(unityChan.transform.position.z >= RastGenerator && unityChan.transform.position.z <= GoalPos - 60)//最後にアイテム生成された位置から再度アイテム生成　ゴール前では生成をやめる
         {
            // Debug.Log(RastGenerator + "の一定距離");
-            if(Cheakin == false)
+            if(check_in == false)
             {
                 Generator();
                // Debug.Log("チェックポイント通過2 アイテム生成");
-                Cheakin = true;
+                check_in = true;
             }
-            else if(Cheakin == true)
+            else if(check_in == true)
             {
                 Generator();
                // Debug.Log("チェックポイント通過３　アイテム生成");
-                Cheakin = true;    
+                check_in = true;    
             }
         }
         else if(unityChan.transform.position.z <= GoalPos -60)　//ゴール前（ｚ軸100）からは何もしない
