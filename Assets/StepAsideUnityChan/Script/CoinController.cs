@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour {
     Renderer targetrenderer;
-    public GameObject Camera;
+   
 	void Start ()
     {
         this.transform.Rotate(0, Random.Range(0, 360), 0);

@@ -10,7 +10,7 @@ public class UnityChanController : MonoBehaviour {
     private float forwardForce = 800.0f;//前進する速度
     private float turnForce = 500.0f;//左右へ移動する速度
     private float movableRange = 3.4f;//左右へ移動できる範囲
-    private float UpForce = 500.0f; //ジャンプ力
+    private float UpForce = 60.0f; //ジャンプ力
     private float coefficient = 0.95f;
     private bool isEnd = false;
 
@@ -20,7 +20,7 @@ public class UnityChanController : MonoBehaviour {
 
     private bool isLButtonDown = false;
     private bool isRButtonDown = false;
-
+   
 
     void Start ()
     {
@@ -123,4 +123,6 @@ public class UnityChanController : MonoBehaviour {
     {
         this.isRButtonDown = false;
     }
+
+   
 }
